@@ -1,0 +1,37 @@
+name: Fetch Note Articles
+
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "取得する記事数"
+        required: false
+        default: "5"
+
+jobs:
+  fetch-note:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Fetch latest articles from Note
+        run: |
+          # 例: curl で取得して _data/notes.yml を上書き
+          # 下記は架空のエンドポイント例
+          # 実際には note の公式API or RSSで JSONを取得し、
+          # jq などでパースして notes.yml の形式に書き出す必要あり。
+          echo "- title: \"サンプル記事\"\n  url: \"https://note.com/massuter/n/xxxxxxx\"\n  description: \"自動更新された記事\"\n  thumb: \"https://...\"\n  published_at: \"$(date -u +%Y-%m-%dT%H:%M:%S)\"" > ./_data/notes.yml
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add _data/notes.yml
+          git commit -m "Update notes.yml by GitHub Actions" || echo "No changes to commit"
+
+      - name: Push changes
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main

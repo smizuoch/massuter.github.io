@@ -1,27 +1,6 @@
-# ナビゲーション
-nav:
-  home: ホーム
-  gallery: 画像ギャラリー
-  notes: Note記事
-  videos: 動画一覧
-  profile: プロフィール
-
-# ページタイトル
-page_titles:
-  gallery: 画像ギャラリー
-  notes: Note記事一覧
-  videos: YouTube動画一覧
-  profile: プロフィール
-
-# 画像ギャラリー
-gallery:
-  title: VRChat 画像ギャラリー
-  auth_prompt: "秘密の言葉を入力してください:"
-  auth_button: 送信
-  auth_error: "違いますよ！"
-  auth_required: "このページを表示するには認証が必要です。"
-
-# その他共通テキスト
-common:
-  new_tab: "(新しいタブで開く)"
-  # ...
+hello: "こんにちは"
+gallery: "画像ギャラリー"
+note_articles: "Note記事一覧"
+videos: "動画一覧"
+profile: "プロフィール"
+theme_toggle: "テーマ切替"

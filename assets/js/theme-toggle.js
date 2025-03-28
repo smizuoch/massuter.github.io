@@ -1,27 +1,38 @@
 (function() {
-    const themeToggleButton = document.getElementById('theme-toggle-button');
-    const htmlElement = document.documentElement;
+    const body = document.body;
+    const toggleBtn = document.getElementById('theme-toggle-btn');
+    const userPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
   
-    // 初期テーマ設定 (head.htmlのスクリプトで実行済みだが、念のため)
-    const storedTheme = localStorage.getItem('theme');
-    const preferredTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    const currentTheme = storedTheme || preferredTheme;
-    htmlElement.setAttribute('data-theme', currentTheme);
+    // ローカルストレージにテーマ選択があるかチェック
+    const savedTheme = localStorage.getItem('theme');
   
-    // ボタンクリックイベント
-    themeToggleButton.addEventListener('click', () => {
-      const current = htmlElement.getAttribute('data-theme');
-      const newTheme = current === 'dark' ? 'light' : 'dark';
-      htmlElement.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme); // 選択をlocalStorageに保存
-    });
+    if (savedTheme) {
+      // 保存されたテーマを反映
+      body.classList.toggle('dark-theme', savedTheme === 'dark');
+      body.dataset.theme = savedTheme;
+    } else {
+      // OSの設定を初回だけ反映
+      if (userPrefersDark) {
+        body.classList.add('dark-theme');
+        body.dataset.theme = 'dark';
+      } else {
+        body.classList.remove('dark-theme');
+        body.dataset.theme = 'light';
+      }
+    }
   
-    // OSのテーマ変更を監視 (オプション)
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-      // localStorageにユーザー設定がなければOS設定に追従
-      if (!localStorage.getItem('theme')) {
-        const newTheme = e.matches ? 'dark' : 'light';
-        htmlElement.setAttribute('data-theme', newTheme);
+    // ボタンクリックで切り替え
+    toggleBtn.addEventListener('click', () => {
+      const isDark = body.classList.contains('dark-theme');
+      if (isDark) {
+        body.classList.remove('dark-theme');
+        body.dataset.theme = 'light';
+        localStorage.setItem('theme', 'light');
+      } else {
+        body.classList.add('dark-theme');
+        body.dataset.theme = 'dark';
+        localStorage.setItem('theme', 'dark');
       }
     });
-  })(); // 即時実行
+  })();
+  

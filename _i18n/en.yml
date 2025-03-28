@@ -1,27 +1,6 @@
-# Navigation
-nav:
-  home: Home
-  gallery: Gallery
-  notes: Note Articles
-  videos: Videos
-  profile: Profile
-
-# Page Titles
-page_titles:
-  gallery: VRChat Image Gallery
-  notes: Note Article List
-  videos: YouTube Video List
-  profile: Profile
-
-# Image Gallery
-gallery:
-  title: VRChat Image Gallery
-  auth_prompt: "Please enter the secret word:"
-  auth_button: Submit
-  auth_error: "That's not correct!"
-  auth_required: "Authentication is required to view this page."
-
-# Other common texts
-common:
-  new_tab: "(opens in new tab)"
-  # ...
+hello: "Hello"
+gallery: "Gallery"
+note_articles: "Note Articles"
+videos: "Videos"
+profile: "Profile"
+theme_toggle: "Toggle Theme"

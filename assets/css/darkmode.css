@@ -1,0 +1,12 @@
+body.dark-theme {
+    --bg-color: #1a1a1a;
+    --text-color: #f0f0f0;
+  }
+  
+  body.dark-theme .logo-light {
+    display: none;
+  }
+  body.dark-theme .logo-dark {
+    display: inline;
+  }
+  

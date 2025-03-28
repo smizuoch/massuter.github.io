@@ -1,21 +1,23 @@
-name: まっすたー
-id: massuter
-links:
-  - name: Twitch
-    url: https://www.twitch.tv/massuter
-    icon: twitch # CSSクラスやSVG IDなどでアイコンを指定
-  - name: X (Twitter)
-    url: https://x.com/Massuter
-    icon: x-twitter
-  - name: VRChat
-    url: https://vrchat.com/home/user/usr_aa99031d-1df4-4092-bde3-aef5af29596d
-    icon: vrchat
-  - name: YouTube
-    url: https://www.youtube.com/@%E3%81%BE%E3%81%A3%E3%81%99%E3%81%9F%E3%83%BCm
-    icon: youtube
-  - name: Amazon Wishlist
-    url: https://www.amazon.jp/hz/wishlist/ls/31UKPAJCR2UTN?ref_=wl_share
-    icon: amazon
-  - name: note
-    url: https://note.com/massuter
-    icon: note
+- name: "Twitch"
+  url: "https://www.twitch.tv/massuter"
+  icon_path: "/images/icons/icon-twitch.png"
+
+- name: "X (Twitter)"
+  url: "https://x.com/Massuter"
+  icon_path: "/images/icons/icon-x.png"
+
+- name: "VRChat"
+  url: "https://vrchat.com/home/user/usr_aa99031d-1df4-4092-bde3-aef5af29596d"
+  icon_path: "/images/icons/icon-vrchat.png"
+
+- name: "YouTube"
+  url: "https://www.youtube.com/@まっすたーm"
+  icon_path: "/images/icons/icon-youtube.png"
+
+- name: "Amazon Wishlist"
+  url: "https://www.amazon.jp/hz/wishlist/ls/31UKPAJCR2UTN?ref_=wl_share"
+  icon_path: "/images/icons/icon-amazon.png"
+
+- name: "note"
+  url: "https://note.com/massuter"
+  icon_path: "/images/icons/icon-note.png"

@@ -1,21 +1,22 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.default_lang | default: 'ja' }}" data-theme="light">
-{% include head.html %}
-<body>
-  <div id="page-container">
-    {% include header.html %}
-    <main id="main-content">
-      {{ content }}
-    </main>
-    {% include footer.html %}
-  </div>
-  <!-- JavaScript -->
-  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
-  {% if page.url == "/gallery/" %}
-  <script src="{{ '/assets/js/auth.js' | relative_url }}"></script>
-  <script src="{{ '/assets/js/gallery.js' | relative_url }}"></script>
-  {% endif %}
-  <script src="{{ '/assets/js/theme-toggle.js' | relative_url }}"></script>
-  <script src="{{ '/assets/js/smooth-transition.js' | relative_url }}"></script>
+<html lang="{{ page.lang | default: site.lang }}">
+<head>
+  {% include head.html %}
+</head>
+<body class="light-theme" data-theme="light">
+
+  <!-- ヘッダー -->
+  {% include header.html %}
+
+  <main id="main-content">
+    {{ content }}
+  </main>
+
+  <!-- フッター -->
+  {% include footer.html %}
+
+  <!-- スクリプト読み込み -->
+  {% include scripts.html %}
+
 </body>
 </html>

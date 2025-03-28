@@ -1,37 +1,15 @@
 ---
 layout: default
-title: ホーム
-# lang: ja # 多言語プラグイン使用時
+title: "ホーム"
 ---
 
 # ようこそ！
+VRChat配信・参加型配信を行う **まっすたー (massuter)** のサイトへようこそ。
 
-ここはVRChat配信者「まっすたー (massuter)」の公式サイトです。
+- 最新の画像は[こちら](/gallery/)から
+- Note記事は[こちら](/note/)から
+- YouTube動画リストは[こちら](/youtube/)から
+- プロフィールは[こちら](/profile/)から
 
-最新情報はこちらでチェック！
-
-## 最新のNote記事
-
-{% if site.data.notes.size > 0 %}
-<ul>
-  {% for note in site.data.notes limit:3 %}
-  <li>
-    <a href="{{ note.url }}" target="_blank" rel="noopener noreferrer">{{ note.title }}</a>
-    <small>({{ note.published_at | date: "%Y年%m月%d日" }})</small>
-  </li>
-  {% endfor %}
-</ul>
-<p><a href="{{ '/note/' | relative_url }}">もっと見る...</a></p>
-{% else %}
-<p>まだ記事がありません。</p>
-{% endif %}
-
-## 最近の動画
-
-{% comment %} url-list.txt を読み込んで表示するロジックが必要 {% endcomment %}
-<p><a href="{{ '/videos/' | relative_url }}">動画一覧へ...</a></p>
-
-## ギャラリー
-
-<p>VRChatでの活動写真はこちらから。</p>
-<p><a href="{{ '/gallery/' | relative_url }}">画像ギャラリーへ...</a></p>
+シンプルでApple風の洗練されたデザインを目指しつつ、  
+ダークモードにも対応しているので、右上のテーマ切替ボタンから切り替えできます。
