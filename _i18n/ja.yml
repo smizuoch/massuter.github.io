@@ -1,0 +1,37 @@
+global:
+  site_title: まっすたー
+  tagline: VRChat参加型配信者
+  description: VRChat参加型配信（Vstreamer）まっすたーの公式サイトです。
+
+nav:
+  home: ホーム
+  gallery: ギャラリー
+  notes: Note
+  videos: 動画
+
+home:
+  welcome: ようこそ！
+  intro: このサイトでは、VRChatでの活動や配信、各種SNS、関連コンテンツなどを紹介しています。気軽に覗いてみてください！
+  recent: 最近の活動
+  latest_video: 最新の動画
+  latest_note: 最新のNote
+  more: もっと見る →
+  follow: SNSでフォロー
+
+gallery:
+  title: VRChat ギャラリー
+  password_prompt: 秘密の言葉を入力してください
+  password_placeholder: 秘密の言葉
+  submit: 確認
+  error: 秘密の言葉が違います。
+
+notes:
+  title: Note記事一覧
+  empty: Note記事はまだありません。
+
+videos:
+  title: YouTube動画一覧
+  empty: 動画はまだありません。
+
+footer:
+  copyright: "© %{year} まっすたー - VRChat参加型配信者"

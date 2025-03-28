@@ -1,0 +1,19 @@
+- name: Twitch
+  url: https://www.twitch.tv/massuter
+  icon: twitch
+
+- name: X (旧Twitter)
+  url: https://x.com/Massuter
+  icon: twitter-x
+
+- name: VRChat
+  url: https://vrchat.com/home/user/usr_aa99031d-1df4-4092-bde3-aef5af29596d
+  icon: vr
+
+- name: YouTube
+  url: https://www.youtube.com/@まっすたーm
+  icon: youtube
+
+- name: 欲しい物リスト
+  url: https://www.amazon.jp/hz/wishlist/ls/31UKPAJCR2UTN?ref_=wl_share
+  icon: gift

@@ -1,0 +1,35 @@
+<header class="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="{{ '/' | relative_url }}" class="logo">
+        <img src="{{ '/images/logo/massuter-logo.png' | relative_url }}" alt="{{ site.title }}" class="logo-image">
+      </a>
+      
+      <nav class="main-nav">
+        <ul>
+          <li><a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>ホーム</a></li>
+          <li><a href="{{ '/gallery/' | relative_url }}" {% if page.url contains '/gallery/' %}class="active"{% endif %}>ギャラリー</a></li>
+          <li><a href="{{ '/notes/' | relative_url }}" {% if page.url contains '/notes/' %}class="active"{% endif %}>Note</a></li>
+          <li><a href="{{ '/videos/' | relative_url }}" {% if page.url contains '/videos/' %}class="active"{% endif %}>動画</a></li>
+        </ul>
+      </nav>
+      
+      <div class="header-controls">
+        <div class="lang-switch">
+          {% for lang in site.languages %}
+            {% if lang == site.lang %}
+              <span class="current-lang">{{ lang }}</span>
+            {% else %}
+              <a href="{{ site.baseurl_root }}/{{ lang }}{{ page.url }}" class="lang-link">{{ lang }}</a>
+            {% endif %}
+          {% endfor %}
+        </div>
+        
+        <button class="theme-toggle" id="theme-toggle" aria-label="ダークモード切替">
+          <span class="icon-light">☀️</span>
+          <span class="icon-dark">🌙</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>

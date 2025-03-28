@@ -1,0 +1,44 @@
+# サイト基本情報
+title: まっすたー
+tagline: VRChat参加型配信者
+description: VRChat参加型配信（Vstreamer）まっすたーの公式サイトです。
+url: https://massuter.github.io
+baseurl: ""
+lang: ja
+author: まっすたー
+
+# ビルド設定
+markdown: kramdown
+highlighter: rouge
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-multiple-languages-plugin
+
+# 多言語設定
+languages: ["ja", "en"]
+exclude_from_localizations: ["assets", "images", "vrc-images", "css", "js", "fonts"]
+default_locale_in_subfolder: false
+
+# コレクション設定
+collections:
+  gallery:
+    output: true
+    permalink: /gallery/:path/
+
+# デフォルト設定
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+      image: "/images/logo/massuter-logo.png"
+
+# 除外ファイル
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .sass-cache
+  - README.md
