@@ -22,8 +22,7 @@ kramdown:
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-  # - jekyll-multiple-languages-plugin # 多言語プラグイン (例)
-  # 他に必要なプラグインを追加
+  - jekyll-sitemap
 
 # --- SEO Tag Settings (jekyll-seo-tag) ---
 logo: /images/logo/logo-light.png # OGP画像などに使われるロゴ
