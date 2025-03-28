@@ -13,10 +13,11 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
 
+      # ★ここを修正する
       - name: Set up Ruby
-        uses: actions/setup-ruby@v1
+        uses: ruby/setup-ruby@v1   # actions/setup-ruby@v1 ではなく ruby/setup-ruby@v1 を使用
         with:
-          ruby-version: '3.1'
+          ruby-version: '3.1.2'    # または '3.1' 等。最新の安定版に合わせる
 
       - name: Install dependencies
         run: |
