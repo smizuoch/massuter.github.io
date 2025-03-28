@@ -1,0 +1,12 @@
+<!-- 共通のJavaScriptの読み込み -->
+<script defer src="{{ '/assets/js/theme-toggle.js' | relative_url }}"></script>
+<script defer src="{{ '/assets/js/seamless-navigation.js' | relative_url }}"></script>
+
+{% if page.gallery %}
+<script defer src="{{ '/assets/js/gallery-password.js' | relative_url }}"></script>
+{% endif %}
+
+<!-- アイコンライブラリ -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+<!-- Google アナリティクスなど、必要に応じて追加 -->

@@ -9,6 +9,9 @@ on:
   schedule:
     - cron: '0 0 * * 0'  # 毎週日曜日の午前0時に実行
 
+permissions:
+  contents: write  # リポジトリへの書き込み権限を追加
+
 jobs:
   build:
     runs-on: ubuntu-latest

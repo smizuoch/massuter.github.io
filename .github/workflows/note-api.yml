@@ -5,6 +5,9 @@ on:
     - cron: '0 12 * * *'  # 毎日12時に実行
   workflow_dispatch:  # 手動実行も可能
 
+permissions:
+  contents: write  # リポジトリへの書き込み権限を追加
+
 jobs:
   fetch-notes:
     runs-on: ubuntu-latest

@@ -6,6 +6,9 @@ on:
       - 'url-list.txt'
   workflow_dispatch:
 
+permissions:
+  contents: write  # リポジトリへの書き込み権限を追加
+
 jobs:
   process-videos:
     runs-on: ubuntu-latest
