@@ -1,31 +1,21 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: 'ja' }}">
-  
-  {% include head.html %}
-  
-  <body class="theme-light" data-barba="wrapper">
+<html lang="{{ page.lang | default: site.default_lang | default: 'ja' }}" data-theme="light">
+{% include head.html %}
+<body>
+  <div id="page-container">
     {% include header.html %}
-    
-    <main class="main-content" data-barba="container" data-barba-namespace="{{ page.title | slugify }}">
-      <div class="container">
-        {{ content }}
-      </div>
+    <main id="main-content">
+      {{ content }}
     </main>
-    
     {% include footer.html %}
-    
-    <!-- パスワード保護モーダル (ギャラリーページ用) -->
-    {% if page.gallery %}
-    <div id="password-modal" class="modal">
-      <div class="modal-content">
-        <h2>秘密の言葉を入力してください</h2>
-        <form id="password-form">
-          <input type="password" id="gallery-password" placeholder="秘密の言葉">
-          <button type="submit">確認</button>
-        </form>
-        <p id="password-error" class="error-message"></p>
-      </div>
-    </div>
-    {% endif %}
-  </body>
+  </div>
+  <!-- JavaScript -->
+  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+  {% if page.url == "/gallery/" %}
+  <script src="{{ '/assets/js/auth.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/gallery.js' | relative_url }}"></script>
+  {% endif %}
+  <script src="{{ '/assets/js/theme-toggle.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/smooth-transition.js' | relative_url }}"></script>
+</body>
 </html>

@@ -1,37 +1,27 @@
-global:
-  site_title: Massuter
-  tagline: VRChat Interactive Streamer
-  description: Official site of Massuter, a VRChat interactive streamer (Vstreamer).
-
+# Navigation
 nav:
   home: Home
   gallery: Gallery
-  notes: Notes
+  notes: Note Articles
   videos: Videos
+  profile: Profile
 
-home:
-  welcome: Welcome!
-  intro: This site introduces my activities on VRChat, streams, social media, and related content. Feel free to look around!
-  recent: Recent Activities
-  latest_video: Latest Video
-  latest_note: Latest Note
-  more: View More →
-  follow: Follow on Social Media
+# Page Titles
+page_titles:
+  gallery: VRChat Image Gallery
+  notes: Note Article List
+  videos: YouTube Video List
+  profile: Profile
 
+# Image Gallery
 gallery:
-  title: VRChat Gallery
-  password_prompt: Please enter the secret phrase
-  password_placeholder: Secret phrase
-  submit: Submit
-  error: Incorrect secret phrase.
+  title: VRChat Image Gallery
+  auth_prompt: "Please enter the secret word:"
+  auth_button: Submit
+  auth_error: "That's not correct!"
+  auth_required: "Authentication is required to view this page."
 
-notes:
-  title: Note Articles
-  empty: No Note articles yet.
-
-videos:
-  title: YouTube Videos
-  empty: No videos yet.
-
-footer:
-  copyright: "© %{year} Massuter - VRChat Interactive Streamer"
+# Other common texts
+common:
+  new_tab: "(opens in new tab)"
+  # ...

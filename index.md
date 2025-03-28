@@ -1,72 +1,37 @@
 ---
 layout: default
 title: ホーム
-permalink: /
+# lang: ja # 多言語プラグイン使用時
 ---
 
-# まっすたー
+# ようこそ！
 
-VRChat参加型配信者（Vstreamer）として活動しています。
+ここはVRChat配信者「まっすたー (massuter)」の公式サイトです。
 
-## ようこそ！
+最新情報はこちらでチェック！
 
-このサイトでは、VRChatでの活動や配信、各種SNS、関連コンテンツなどを紹介しています。
-気軽に覗いてみてください！
+## 最新のNote記事
 
-## 最近の活動
-
-<div class="recent-content">
-  <div class="recent-section">
-    <h3>最新の動画</h3>
-    <div class="video-preview">
-      {% assign first_video = site.data.videos | first %}
-      {% if first_video %}
-        <div class="video-embed">
-          <iframe width="560" height="315" src="{{ first_video.embed_url }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <div class="video-info">
-          <h4>{{ first_video.title }}</h4>
-          <p class="video-date">{{ first_video.date | date: "%Y年%m月%d日" }}</p>
-        </div>
-        <a href="/videos/" class="more-link">もっと見る →</a>
-      {% else %}
-        <p>動画がありません</p>
-      {% endif %}
-    </div>
-  </div>
-  
-  <div class="recent-section">
-    <h3>最新のNote</h3>
-    <div class="note-preview">
-      {% assign first_note = site.data.notes | first %}
-      {% if first_note %}
-        <div class="note-item">
-          <div class="note-thumb">
-            <img src="{{ first_note.thumb }}" alt="{{ first_note.title }}">
-          </div>
-          <div class="note-content">
-            <p class="note-date">{{ first_note.date | date: "%Y年%m月%d日" }}</p>
-            <h4 class="note-title">
-              <a href="{{ first_note.url }}" target="_blank" rel="noopener">{{ first_note.title }}</a>
-            </h4>
-            <p class="note-excerpt">{{ first_note.excerpt }}</p>
-          </div>
-        </div>
-        <a href="/notes/" class="more-link">もっと見る →</a>
-      {% else %}
-        <p>記事がありません</p>
-      {% endif %}
-    </div>
-  </div>
-</div>
-
-## SNSでフォロー
-
-<div class="social-grid">
-  {% for link in site.data.sns-links %}
-  <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer" class="social-card">
-    <span class="icon icon-{{ link.icon }}"></span>
-    <span class="social-name">{{ link.name }}</span>
-  </a>
+{% if site.data.notes.size > 0 %}
+<ul>
+  {% for note in site.data.notes limit:3 %}
+  <li>
+    <a href="{{ note.url }}" target="_blank" rel="noopener noreferrer">{{ note.title }}</a>
+    <small>({{ note.published_at | date: "%Y年%m月%d日" }})</small>
+  </li>
   {% endfor %}
-</div>
+</ul>
+<p><a href="{{ '/note/' | relative_url }}">もっと見る...</a></p>
+{% else %}
+<p>まだ記事がありません。</p>
+{% endif %}
+
+## 最近の動画
+
+{% comment %} url-list.txt を読み込んで表示するロジックが必要 {% endcomment %}
+<p><a href="{{ '/videos/' | relative_url }}">動画一覧へ...</a></p>
+
+## ギャラリー
+
+<p>VRChatでの活動写真はこちらから。</p>
+<p><a href="{{ '/gallery/' | relative_url }}">画像ギャラリーへ...</a></p>

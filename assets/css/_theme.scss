@@ -1,0 +1,16 @@
+// テーマ切替に関連するスタイル
+// 例: ボタンのスタイル、特定の要素の色反転など
+
+#theme-toggle-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-text);
+    padding: 5px;
+  }
+  
+  // 必要に応じて、画像などのアセットもテーマによって切り替えるCSSを追加
+  // 例:
+  // [data-theme="dark"] .some-element {
+  //   background-image: url('/images/dark-bg.png');
+  // }

@@ -1,30 +1,27 @@
-document.addEventListener('DOMContentLoaded', function() {
-  const themeToggle = document.getElementById('theme-toggle');
-  const body = document.body;
+(function() {
+    const themeToggleButton = document.getElementById('theme-toggle-button');
+    const htmlElement = document.documentElement;
   
-  // OSのカラーモード設定を確認
-  const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    // 初期テーマ設定 (head.htmlのスクリプトで実行済みだが、念のため)
+    const storedTheme = localStorage.getItem('theme');
+    const preferredTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    const currentTheme = storedTheme || preferredTheme;
+    htmlElement.setAttribute('data-theme', currentTheme);
   
-  // ローカルストレージから保存されたテーマを取得
-  const savedTheme = localStorage.getItem('theme');
+    // ボタンクリックイベント
+    themeToggleButton.addEventListener('click', () => {
+      const current = htmlElement.getAttribute('data-theme');
+      const newTheme = current === 'dark' ? 'light' : 'dark';
+      htmlElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme); // 選択をlocalStorageに保存
+    });
   
-  // 初期テーマを設定
-  if (savedTheme) {
-    body.className = savedTheme === 'dark' ? 'theme-dark' : 'theme-light';
-  } else {
-    body.className = prefersDarkMode ? 'theme-dark' : 'theme-light';
-  }
-  
-  // テーマ切り替えボタンのクリック処理
-  themeToggle.addEventListener('click', function() {
-    if (body.classList.contains('theme-light')) {
-      body.classList.remove('theme-light');
-      body.classList.add('theme-dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      body.classList.remove('theme-dark');
-      body.classList.add('theme-light');
-      localStorage.setItem('theme', 'light');
-    }
-  });
-});
+    // OSのテーマ変更を監視 (オプション)
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+      // localStorageにユーザー設定がなければOS設定に追従
+      if (!localStorage.getItem('theme')) {
+        const newTheme = e.matches ? 'dark' : 'light';
+        htmlElement.setAttribute('data-theme', newTheme);
+      }
+    });
+  })(); // 即時実行

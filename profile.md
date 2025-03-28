@@ -1,72 +1,29 @@
 ---
 layout: default
 title: プロフィール
-permalink: /profile/
+# lang: ja
+# title_i18n: page_titles.profile
 ---
 
-# まっすたーについて
+<h1>{% t page_titles.profile %}</h1> {# i18n対応例 #}
 
-## プロフィール
-
-VRChat参加型配信者（Vstreamer）として活動しています。
-パステルカラーの水色を基調とした世界観で、リスナーの皆さんと一緒に楽しい時間を過ごすことをモットーにしています。
-
-## 活動内容
-
-- VRChatでの参加型配信
-- ゲーム実況
-- 雑談配信
-- バーチャル旅行
-
-## 配信情報
-
-主にTwitchで配信を行っています。配信スケジュールは[X (Twitter)](https://x.com/Massuter)で告知していますので、フォローよろしくお願いします。
-
-## SNS
-
-<div class="profile-social-links">
-  {% for link in site.data.sns-links %}
-  <div class="profile-social-item">
-    <h3><span class="icon icon-{{ link.icon }}"></span> {{ link.name }}</h3>
-    <p><a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ link.url }}</a></p>
-  </div>
-  {% endfor %}
+<div class="profile-info">
+  <h2>{{ site.data.sns-links.name }} ({{ site.data.sns-links.id }})</h2>
+  <p>VRChat配信や参加型配信をしています！</p>
+  <!-- 他の自己紹介文 -->
 </div>
 
-<style>
-  .profile-social-links {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
-  }
-  
-  .profile-social-item {
-    background-color: var(--card-bg);
-    border-radius: 8px;
-    padding: 1.5rem;
-    box-shadow: var(--shadow);
-  }
-  
-  .profile-social-item h3 {
-    display: flex;
-    align-items: center;
-    margin-bottom: 0.5rem;
-    color: var(--accent-color);
-  }
-  
-  .profile-social-item .icon {
-    margin-right: 0.5rem;
-  }
-  
-  .profile-social-item a {
-    color: var(--text-color);
-    text-decoration: none;
-    word-break: break-all;
-  }
-  
-  .profile-social-item a:hover {
-    color: var(--accent-color);
-    text-decoration: underline;
-  }
-</style>
+<div class="profile-links">
+  <h3>各種リンク</h3>
+  <ul>
+    {% for link in site.data.sns-links.links %}
+      <li>
+        <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">
+          <!-- アイコン (CSSで設定) -->
+          <span class="icon icon-{{ link.icon | default: 'link' }}"></span>
+          {{ link.name }} {% t common.new_tab %} {# i18n対応例 #}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

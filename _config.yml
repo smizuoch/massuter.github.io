@@ -1,44 +1,72 @@
-# サイト基本情報
-title: まっすたー
-tagline: VRChat参加型配信者
-description: VRChat参加型配信（Vstreamer）まっすたーの公式サイトです。
-url: https://massuter.github.io
-baseurl: ""
-lang: ja
-author: まっすたー
+# --- Site Settings ---
+title: まっすたー (massuter) Official Site # サイトタイトル
+email: your-email@example.com # 連絡先メールアドレス (必要なら)
+description: >- # サイトの説明 (SEO用)
+  VRChat配信者「まっすたー (massuter)」の活動を発信する公式サイト。
+  配信情報、Note記事、動画、画像ギャラリーなど。
+baseurl: "" # サブディレクトリで公開しない場合は空
+url: "https://massuter.github.io" # GitHub PagesのURL (カスタムドメインなら変更)
+github_username: massuter # GitHubユーザー名
 
-# ビルド設定
+# --- Author Info ---
+author:
+  name: まっすたー
+  id: massuter
+  # 他のプロフィール情報もここに追加可能
+
+# --- Build Settings ---
 markdown: kramdown
-highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-  - jekyll-multiple-languages-plugin
+  # - jekyll-multiple-languages-plugin # 多言語プラグイン (例)
+  # 他に必要なプラグインを追加
 
-# 多言語設定
-languages: ["ja", "en"]
-exclude_from_localizations: ["assets", "images", "vrc-images", "css", "js", "fonts"]
-default_locale_in_subfolder: false
+# --- SEO Tag Settings (jekyll-seo-tag) ---
+logo: /images/logo/logo-light.png # OGP画像などに使われるロゴ
+social:
+  name: まっすたー
+  links:
+    - https://x.com/Massuter
+    - https://www.twitch.tv/massuter
+    - https://www.youtube.com/@%E3%81%BE%E3%81%A3%E3%81%99%E3%81%9F%E3%83%BCm
+    # 他のSNSプロファイルURL
 
-# コレクション設定
-collections:
-  gallery:
-    output: true
-    permalink: /gallery/:path/
+# --- Language Settings (jekyll-multiple-languages-plugin の例) ---
+# languages: ["ja", "en"] # 対応言語
+# default_lang: "ja"      # デフォルト言語
+# exclude_from_localizations: ["assets/", "images/", "vrc-images/"] # 翻訳対象外
 
-# デフォルト設定
+# --- Collections (必要に応じて) ---
+# collections:
+#   portfolio:
+#     output: true
+
+# --- Defaults ---
 defaults:
   - scope:
-      path: ""
+      path: "" # ルート
     values:
-      layout: "default"
-      image: "/images/logo/massuter-logo.png"
+      layout: "default" # デフォルトレイアウト
 
-# 除外ファイル
+# --- Sass ---
+sass:
+  sass_dir: assets/css
+  style: compressed # compressed or expanded
+
+# --- Exclude from processing ---
 exclude:
   - Gemfile
   - Gemfile.lock
   - node_modules
-  - vendor
-  - .sass-cache
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
   - README.md
+  - LICENSE.txt
+  - .github
+  - url-list.txt # Jekyllの処理対象外にする

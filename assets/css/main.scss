@@ -1,0 +1,82 @@
+---
+# 空のフロントマターが必要
+---
+
+// 変数とミックスインをインポート
+@import "variables";
+@import "theme"; // テーマスタイル
+
+// 基本スタイル (リセット、タイポグラフィ、レイアウトなど)
+body {
+  font-family: var(--font-family-base);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+  color: var(--color-link);
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.wrapper {
+  max-width: calc(#{$content-width} - (#{$spacing-unit} * 2));
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $spacing-unit;
+  padding-left: $spacing-unit;
+  @extend %clearfix; // 必要ならclearfix
+
+  @media screen and (max-width: $on-palm) {
+    max-width: calc(#{$content-width} - (#{$spacing-unit}));
+    padding-right: $spacing-unit / 2;
+    padding-left: $spacing-unit / 2;
+  }
+}
+
+// ヘッダー、フッター、ナビゲーションのスタイル
+.site-header { /* ... */ }
+.site-footer { /* ... */ }
+.site-nav { /* ... */ }
+
+// ロゴのテーマ切替
+.logo-light, .logo-dark { display: none; }
+[data-theme="light"] .logo-light { display: inline-block; }
+[data-theme="dark"] .logo-dark { display: inline-block; }
+
+// テーマ切替ボタンのアイコン表示
+#theme-toggle-button .icon-sun,
+#theme-toggle-button .icon-moon {
+  width: 1.2em;
+  height: 1.2em;
+  vertical-align: middle;
+}
+#theme-toggle-button .icon-moon { display: none; }
+#theme-toggle-button .icon-sun { display: inline-block; }
+[data-theme="dark"] #theme-toggle-button .icon-moon { display: inline-block; }
+[data-theme="dark"] #theme-toggle-button .icon-sun { display: none; }
+
+
+// ページ固有のスタイル
+.gallery-grid { /* ... */ }
+.note-list { /* ... */ }
+.video-list { /* ... */ }
+
+// モーダルスタイル (認証、画像拡大)
+.modal { /* ... */ }
+
+// アニメーション
+@keyframes fadeIn { /* ... */ }
+@keyframes slideIn { /* ... */ }
+
+// レスポンシブ対応
+@media screen and (max-width: $on-medium) { /* ... */ }
+@media screen and (max-width: $on-small) { /* ... */ }
+
+// ユーティリティクラス
+.hidden { display: none; }

@@ -1,17 +1,15 @@
-- title: "VRChatでの新しい冒険"
-  url: "https://note.com/example/n1234567890"
-  thumb: "https://assets.note.com/examples/example1.jpg"
-  excerpt: "先日VRChatで訪れた新しいワールドについて紹介します。美しい景色と素敵な出会いがありました。"
-  date: "2023-12-15"
+# このファイルは GitHub Actions によって自動生成されます
+# 手動で編集しないでください
+# 最終更新: 2023-10-27T10:00:00Z
 
-- title: "配信機材のアップデートについて"
-  url: "https://note.com/example/n0987654321"
-  thumb: "https://assets.note.com/examples/example2.jpg"
-  excerpt: "最近導入した新しい配信機材と、それによって可能になった演出についての解説です。"
-  date: "2023-11-20"
-
-- title: "バーチャル空間での交流のコツ"
-  url: "https://note.com/example/n1122334455"
-  thumb: "https://assets.note.com/examples/example3.jpg"
-  excerpt: "初めてVRChatに参加する人向けに、コミュニケーションのコツと楽しみ方を紹介します。"
-  date: "2023-10-05"
+- title: "最近のVRChat活動まとめ"
+  url: "https://note.com/massuter/n/xxxxxxxxxxxxx"
+  published_at: "2023-10-26T18:00:00+09:00"
+  # description: "記事の概要..." # RSSから取得できれば
+  # thumbnail: "https://assets.st-note.com/..." # RSSから取得できれば
+- title: "参加型配信の告知"
+  url: "https://note.com/massuter/n/yyyyyyyyyyyyy"
+  published_at: "2023-10-20T12:00:00+09:00"
+  # description: "..."
+  # thumbnail: "..."
+# ... 他の記事情報
