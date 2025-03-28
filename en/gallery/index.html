@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ギャラリー | まっすたー</title>
+  <meta name="description" content="VRChat参加型配信（Vstreamer）まっすたーの公式サイトです。">
+  
+  <!-- OGP設定 -->
+  <meta property="og:title" content="ギャラリー">
+  <meta property="og:description" content="VRChat参加型配信（Vstreamer）まっすたーの公式サイトです。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://massuter.github.io/en/gallery/">
+  <meta property="og:image" content="https://massuter.github.io/images/logo/massuter-logo.png">
+  <meta property="og:site_name" content="まっすたー">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+  
+  <!-- ファビコン -->
+  <link rel="icon" type="image/png" href="/images/logo/favicon.png">
+
+  <!-- カスタムフォント -->
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- JavaScriptファイル -->
+  <script defer src="/assets/js/theme-toggle.js"></script>
+  <script defer src="/assets/js/seamless-navigation.js"></script>
+  
+  <script defer src="/assets/js/gallery-password.js"></script>
+  
+</head>
+
+  
+  <body class="theme-light" data-barba="wrapper">
+    <header class="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img src="/images/logo/massuter-logo.png" alt="まっすたー" class="logo-image">
+      </a>
+      
+      <nav class="main-nav">
+        <ul>
+          <li><a href="/" >ホーム</a></li>
+          <li><a href="/gallery/" class="active">ギャラリー</a></li>
+          <li><a href="/notes/" >Note</a></li>
+          <li><a href="/videos/" >動画</a></li>
+        </ul>
+      </nav>
+      
+      <div class="header-controls">
+        <div class="lang-switch">
+          
+            
+              <a href="/ja/gallery/" class="lang-link">ja</a>
+            
+          
+            
+              <span class="current-lang">en</span>
+            
+          
+        </div>
+        
+        <button class="theme-toggle" id="theme-toggle" aria-label="ダークモード切替">
+          <span class="icon-light">☀️</span>
+          <span class="icon-dark">🌙</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+    
+    <main class="main-content" data-barba="container" data-barba-namespace="ギャラリー">
+      <div class="container">
+        <h1 id="vrchat-ギャラリー">VRChat ギャラリー</h1>
+
+<div class="gallery-container" style="display: none;">
+  <div class="gallery-grid">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // ギャラリーアイテムのクリック処理
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    
+    galleryItems.forEach(item => {
+      item.addEventListener('click', function() {
+        const imgSrc = this.getAttribute('data-src');
+        
+        // モーダルを作成
+        const modal = document.createElement('div');
+        modal.className = 'modal image-modal active';
+        
+        // モーダルの内容
+        modal.innerHTML = `
+          <div class="modal-image-container">
+            <img src="${imgSrc}" alt="VRChat Image (Large)">
+            <button class="close-modal">×</button>
+          </div>
+        `;
+        
+        // bodyに追加
+        document.body.appendChild(modal);
+        
+        // 閉じるボタンのイベント
+        modal.querySelector('.close-modal').addEventListener('click', function() {
+          modal.classList.add('fade-out');
+          setTimeout(() => {
+            modal.remove();
+          }, 300);
+        });
+        
+        // モーダル背景クリックで閉じる
+        modal.addEventListener('click', function(e) {
+          if (e.target === modal) {
+            modal.classList.add('fade-out');
+            setTimeout(() => {
+              modal.remove();
+            }, 300);
+          }
+        });
+      });
+    });
+  });
+</script>
+
+<style>
+  .gallery-container {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  
+  .gallery-container.visible {
+    opacity: 1;
+    display: block !important;
+  }
+  
+  .image-modal {
+    z-index: 2100;
+  }
+  
+  .modal-image-container {
+    max-width: 90vw;
+    max-height: 90vh;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  .modal-image-container img {
+    max-width: 100%;
+    max-height: 90vh;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .close-modal {
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  
+  .fade-out {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+</style>
+
+
+      </div>
+    </main>
+    
+    <footer class="site-footer">
+  <div class="container">
+    <div class="social-links">
+      <h3>SNS</h3>
+      <ul>
+        
+        <li>
+          <a href="https://www.twitch.tv/massuter" target="_blank" rel="noopener noreferrer" title="Twitch">
+            <span class="icon icon-twitch"></span>
+            <span class="link-name">Twitch</span>
+          </a>
+        </li>
+        
+        <li>
+          <a href="https://x.com/Massuter" target="_blank" rel="noopener noreferrer" title="X (旧Twitter)">
+            <span class="icon icon-twitter-x"></span>
+            <span class="link-name">X (旧Twitter)</span>
+          </a>
+        </li>
+        
+        <li>
+          <a href="https://vrchat.com/home/user/usr_aa99031d-1df4-4092-bde3-aef5af29596d" target="_blank" rel="noopener noreferrer" title="VRChat">
+            <span class="icon icon-vr"></span>
+            <span class="link-name">VRChat</span>
+          </a>
+        </li>
+        
+        <li>
+          <a href="https://www.youtube.com/@まっすたーm" target="_blank" rel="noopener noreferrer" title="YouTube">
+            <span class="icon icon-youtube"></span>
+            <span class="link-name">YouTube</span>
+          </a>
+        </li>
+        
+        <li>
+          <a href="https://www.amazon.jp/hz/wishlist/ls/31UKPAJCR2UTN?ref_=wl_share" target="_blank" rel="noopener noreferrer" title="欲しい物リスト">
+            <span class="icon icon-gift"></span>
+            <span class="link-name">欲しい物リスト</span>
+          </a>
+        </li>
+        
+      </ul>
+    </div>
+    
+    <div class="footer-info">
+      <p>© 2025 まっすたー - VRChat参加型配信者</p>
+    </div>
+  </div>
+</footer>
+
+    
+    <!-- パスワード保護モーダル (ギャラリーページ用) -->
+    
+    <div id="password-modal" class="modal">
+      <div class="modal-content">
+        <h2>秘密の言葉を入力してください</h2>
+        <form id="password-form">
+          <input type="password" id="gallery-password" placeholder="秘密の言葉">
+          <button type="submit">確認</button>
+        </form>
+        <p id="password-error" class="error-message"></p>
+      </div>
+    </div>
+    
+  </body>
+</html>
