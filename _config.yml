@@ -10,7 +10,7 @@ github_username: massuter
 
 # Build settings
 markdown: kramdown
-theme: minima # Placeholder, will likely be replaced by custom theme
+# theme: minima # Removed as we are using a custom theme structure
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
