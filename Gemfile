@@ -13,7 +13,7 @@ gem "jekyll-seo-tag", "~> 2.8.0"
 
 # Plugin for i18n (multi-language support)
 # Note: Installation and configuration might require additional steps later.
-gem "jekyll-multiple-languages-plugin", "~> 2.0"
+gem "jekyll-multiple-languages-plugin", "~> 1.8.0" # Corrected version constraint
 
 # Other potentially useful plugins (can be added later if needed)
 # gem "jekyll-paginate" # For pagination if required
