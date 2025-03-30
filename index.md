@@ -1,15 +1,21 @@
 ---
 layout: default
-title: "ホーム"
+title: nav.home # Use nav key for title consistency
+permalink: /
+lang: ja
+# No need for explicit permalink for default language homepage if configured correctly
 ---
 
-# ようこそ！
-VRChat配信・参加型配信を行う **まっすたー (massuter)** のサイトへようこそ。
+# {{ site.title }} {{ 'general.welcome_message' | t }}
 
-- 最新の画像は[こちら](/gallery/)から
-- Note記事は[こちら](/note/)から
-- YouTube動画リストは[こちら](/youtube/)から
-- プロフィールは[こちら](/profile/)から
+{{ site.data[page.lang].seo.description | default: site.description }}
 
-シンプルでApple風の洗練されたデザインを目指しつつ、  
-ダークモードにも対応しているので、右上のテーマ切替ボタンから切り替えできます。
+<!-- Placeholder content - This will be replaced with more dynamic content later -->
+
+## {{ 'general.latest_info' | t }}
+
+*   **{{ 'nav.notes' | t }}:** [{{ 'general.check_latest_notes' | t }}]({{ '/notes/' | localize_url }})
+*   **{{ 'nav.videos' | t }}:** [{{ 'general.check_recent_videos' | t }}]({{ '/videos/' | localize_url }})
+*   **{{ 'nav.gallery' | t }}:** [{{ 'general.check_gallery' | t }}]({{ '/gallery/' | localize_url }})
+
+{{ 'general.please_browse' | t }}

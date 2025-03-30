@@ -1,22 +1,29 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang }}">
-<head>
-  {% include head.html %}
-</head>
-<body class="light-theme" data-theme="light">
+<html lang="{{ page.lang | default: site.default_lang | default: "ja" }}">
 
-  <!-- ヘッダー -->
+{% include head.html %}
+
+<body class="theme-light"> {# Default theme, JS will update this #}
+
   {% include header.html %}
 
-  <main id="main-content">
-    {{ content }}
+  <main class="page-content" aria-label="Content">
+    <div class="wrapper">
+      {{ content }}
+    </div>
   </main>
 
-  <!-- フッター -->
   {% include footer.html %}
 
-  <!-- スクリプト読み込み -->
-  {% include scripts.html %}
+  <!-- Core JS -->
+  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+  <!-- Theme Toggle JS -->
+  <script src="{{ '/assets/js/theme-toggle.js' | relative_url }}"></script>
+  <!-- Seamless Navigation JS -->
+  <script src="{{ '/assets/js/seamless-nav.js' | relative_url }}"></script>
+  <!-- Secret Word Auth JS (if needed on page) -->
+  {# <script src="{{ '/assets/js/secret-auth.js' | relative_url }}"></script> #}
 
 </body>
+
 </html>

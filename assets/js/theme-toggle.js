@@ -1,38 +1,54 @@
+// assets/js/theme-toggle.js
+
 (function() {
-    const body = document.body;
-    const toggleBtn = document.getElementById('theme-toggle-btn');
-    const userPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-  
-    // ローカルストレージにテーマ選択があるかチェック
-    const savedTheme = localStorage.getItem('theme');
-  
-    if (savedTheme) {
-      // 保存されたテーマを反映
-      body.classList.toggle('dark-theme', savedTheme === 'dark');
-      body.dataset.theme = savedTheme;
+  const themeToggleButton = document.getElementById('theme-toggle');
+  const toggleIcon = themeToggleButton ? themeToggleButton.querySelector('.toggle-icon') : null;
+  const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+  const currentTheme = localStorage.getItem('theme');
+
+  const applyTheme = (theme) => {
+    if (theme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark'); // Apply to <html> for global scope
+      if (toggleIcon) toggleIcon.textContent = '🌙'; // Moon icon for dark
+      localStorage.setItem('theme', 'dark');
     } else {
-      // OSの設定を初回だけ反映
-      if (userPrefersDark) {
-        body.classList.add('dark-theme');
-        body.dataset.theme = 'dark';
-      } else {
-        body.classList.remove('dark-theme');
-        body.dataset.theme = 'light';
-      }
+      document.documentElement.setAttribute('data-theme', 'light'); // Apply to <html>
+      if (toggleIcon) toggleIcon.textContent = '☀️'; // Sun icon for light
+      localStorage.setItem('theme', 'light');
     }
-  
-    // ボタンクリックで切り替え
-    toggleBtn.addEventListener('click', () => {
-      const isDark = body.classList.contains('dark-theme');
-      if (isDark) {
-        body.classList.remove('dark-theme');
-        body.dataset.theme = 'light';
-        localStorage.setItem('theme', 'light');
-      } else {
-        body.classList.add('dark-theme');
-        body.dataset.theme = 'dark';
-        localStorage.setItem('theme', 'dark');
-      }
+    console.log(`Theme applied: ${theme}`);
+  };
+
+  // 1. Check localStorage first
+  if (currentTheme) {
+    applyTheme(currentTheme);
+  } else {
+    // 2. If no localStorage, check OS preference
+    if (prefersDarkScheme.matches) {
+      applyTheme('dark');
+    } else {
+      applyTheme('light');
+    }
+  }
+
+  // Add listener for the toggle button
+  if (themeToggleButton) {
+    themeToggleButton.addEventListener('click', () => {
+      const newTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      applyTheme(newTheme);
     });
-  })();
-  
+  } else {
+    console.warn("Theme toggle button not found.");
+  }
+
+  // Add listener for changes in OS preference (optional, but good UX)
+  prefersDarkScheme.addEventListener('change', (e) => {
+    // Only change if the user hasn't manually set a theme via localStorage
+    if (!localStorage.getItem('theme')) {
+      applyTheme(e.matches ? 'dark' : 'light');
+    }
+  });
+
+  console.log("Theme toggle script loaded.");
+
+})(); // IIFE to avoid polluting global scope
