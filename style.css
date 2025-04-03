@@ -337,48 +337,30 @@ nav {
     align-items: center;
 }
 
+/* Twitchプレイヤーのレスポンシブ対応 */
+.twitch-embed {
+    position: relative;
+    width: 100%;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    overflow: hidden;
+}
+
+.twitch-player {
+    width: 100%;
+    max-width: 620px;
+    height: 378px;
+}
+
+@media (max-width: 768px) {
+    .twitch-player {
+        height: 300px;
+    }
+}
+
 .twitch-embed p, .calendar-embed p, .google-form-embed p {
     color: #999;
     font-style: italic;
-}
-
-.schedule h3 {
-    color: #A0D8EF;
-    margin-bottom: 1rem;
-}
-
-.schedule h3 i {
-    margin-right: 0.5rem;
-    color: #FFB6C1;
-}
-
-.youtube-link {
-    margin-top: 1rem;
-}
-
-.button { /* General button style */
-    display: inline-block;
-    background-color: #A0D8EF; /* Main light blue */
-    color: #FFFFFF;
-    padding: 0.8rem 1.8rem;
-    border-radius: 25px;
-    font-size: 1rem;
-    font-weight: 500;
-    text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    border: none;
-    cursor: pointer;
-}
-
-.button:hover {
-    background-color: #88cbe2; /* Darker blue */
-    transform: translateY(-2px);
-    text-decoration: none;
-    color: #FFFFFF;
-}
-
-.button i {
-    margin-right: 0.5rem;
 }
 
 /* --- Worlds Section (#worlds) --- */
