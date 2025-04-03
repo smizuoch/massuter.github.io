@@ -665,3 +665,248 @@ nav {
     .link-button { padding: 0.7rem 1.2rem; font-size: 0.9rem; }
     .link-button i { margin-right: 0.5rem; }
 }
+
+/* --- Dark Mode Styles --- */
+body.dark-mode {
+    background-color: #2c3e50; /* Dark Slate Blue */
+    color: #ecf0f1; /* Light Gray text */
+}
+
+body.dark-mode #header {
+    background-color: rgba(35, 47, 62, 0.95); /* Darker transparent header */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .logo a {
+    color: #82c4e0; /* Lighter blue for logo */
+}
+body.dark-mode .logo a:hover {
+    color: #ffcdd2; /* Lighter pink */
+}
+
+
+body.dark-mode nav .nav-links a {
+    color: #bdc3c7; /* Lighter gray for nav links */
+}
+
+body.dark-mode nav .nav-links a:hover {
+    color: #ffcdd2; /* Lighter pink */
+}
+
+body.dark-mode nav .nav-links a.active {
+    color: #82c4e0; /* Lighter blue */
+    border-bottom-color: #82c4e0;
+}
+
+body.dark-mode .burger div {
+    background-color: #ecf0f1; /* Light burger lines */
+}
+
+/* Mobile nav background in dark mode */
+@media (max-width: 768px) {
+    body.dark-mode .nav-links {
+        background-color: rgba(44, 62, 80, 0.98); /* Dark background for mobile nav */
+    }
+    body.dark-mode .nav-links li a {
+        color: #ecf0f1; /* Light text for mobile nav links */
+    }
+     body.dark-mode .nav-links li a.active {
+        color: #82c4e0; /* Lighter blue */
+    }
+}
+
+
+body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.dark-mode h4, body.dark-mode h5, body.dark-mode h6 {
+    color: #ecf0f1; /* Light Gray for headings */
+}
+
+body.dark-mode h2 {
+    color: #82c4e0; /* Lighter blue for section titles */
+}
+
+body.dark-mode h2::after {
+    background-color: #ffcdd2; /* Lighter pink for underline */
+}
+
+body.dark-mode h4 {
+     color: #82c4e0; /* Lighter blue */
+}
+
+body.dark-mode a {
+    color: #82c4e0; /* Lighter blue for links */
+}
+
+body.dark-mode a:hover, body.dark-mode a:focus {
+    color: #ffcdd2; /* Lighter pink on hover */
+}
+
+/* Section backgrounds */
+body.dark-mode .hero {
+    background-color: #34495e; /* Darker blue for hero */
+    /* Keep the subtle pattern, maybe adjust opacity or color if needed */
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2382c4e0' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+body.dark-mode .hero h1 {
+    color: #ffffff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .hero p {
+    color: #e0e0e0;
+}
+
+body.dark-mode .cta-button {
+    background-color: #ffcdd2; /* Lighter pink */
+    color: #333; /* Darker text for contrast */
+}
+body.dark-mode .cta-button:hover {
+    background-color: #ffb3ba; /* Slightly darker light pink */
+    color: #333;
+}
+
+body.dark-mode #about {
+    background-color: #2c3e50; /* Match body background */
+}
+body.dark-mode .about-avatar {
+     border: 3px solid #4a617a; /* Border for avatar */
+}
+body.dark-mode .about-text h3 {
+    color: #82c4e0; /* Lighter blue */
+}
+body.dark-mode .about-text .comment {
+    background-color: #34495e; /* Darker background for comment */
+    color: #bdc3c7;
+    border-left-color: #82c4e0; /* Lighter blue border */
+}
+body.dark-mode .about-text ul li::before {
+    /* Keep star color or adjust if needed */
+     opacity: 0.8;
+}
+
+
+body.dark-mode #stream,
+body.dark-mode #news,
+body.dark-mode #contact {
+    background-color: #34495e; /* Slightly lighter dark background */
+}
+
+body.dark-mode .twitch-embed,
+body.dark-mode .schedule,
+body.dark-mode .calendar-embed,
+body.dark-mode .google-form-embed,
+body.dark-mode .world-card,
+body.dark-mode .news-list li {
+    background-color: #2c3e50; /* Darker background for cards/items */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .twitch-embed p,
+body.dark-mode .calendar-embed p,
+body.dark-mode .google-form-embed p,
+body.dark-mode .worlds-note,
+body.dark-mode .news-list li {
+    color: #bdc3c7; /* Lighter gray text */
+}
+
+body.dark-mode .world-card h3 {
+    color: #82c4e0; /* Lighter blue */
+}
+
+body.dark-mode .world-launch-button {
+    background-color: #ffcdd2; /* Lighter pink */
+    color: #333;
+}
+body.dark-mode .world-launch-button:hover {
+    background-color: #ffb3ba;
+    color: #333;
+}
+
+body.dark-mode .news-list li {
+    border-left-color: #82c4e0; /* Lighter blue */
+}
+
+body.dark-mode .news-date {
+    color: #ffcdd2; /* Lighter pink */
+}
+
+body.dark-mode #links {
+    background-color: #2c3e50; /* Match body background */
+}
+
+/* Keep link button colors, maybe adjust hover brightness */
+body.dark-mode .link-button:hover {
+    filter: brightness(1.2);
+}
+
+body.dark-mode #footer {
+    background-color: #34495e; /* Darker footer */
+    color: #ecf0f1;
+}
+
+body.dark-mode .social-links a {
+    color: #ecf0f1;
+}
+
+body.dark-mode .social-links a:hover {
+    color: #fff59d; /* Lighter yellow */
+}
+
+/* --- Theme Toggle Button --- */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem; /* Space from nav links */
+}
+
+.theme-switch {
+    display: inline-block;
+    height: 24px; /* Adjust size */
+    position: relative;
+    width: 50px; /* Adjust size */
+    cursor: pointer;
+    background-color: #ccc; /* Default background */
+    border-radius: 34px;
+    transition: background-color 0.4s;
+}
+
+.theme-switch input {
+    display:none;
+}
+
+.slider {
+    background-color: #fff; /* Slider handle color */
+    bottom: 3px; /* Positioning */
+    content: "";
+    height: 18px; /* Adjust size */
+    left: 3px; /* Positioning */
+    position: absolute;
+    transition: .4s;
+    width: 18px; /* Adjust size */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px; /* Icon size */
+}
+
+/* Icon display */
+.slider::before {
+    content: "☀️"; /* Sun icon */
+    color: #f39c12; /* Orange sun */
+}
+
+input:checked + .slider {
+    background-color: #34495e; /* Dark slider handle */
+    transform: translateX(26px); /* Move slider */
+}
+
+input:checked + .slider::before {
+    content: "🌙"; /* Moon icon */
+    color: #f1c40f; /* Yellow moon */
+}
+
+/* Change background color of the switch */
+body.dark-mode .theme-switch {
+    background-color: #555; /* Darker background for switch */
+}
