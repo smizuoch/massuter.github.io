@@ -857,10 +857,12 @@ body.dark-mode #links {
 }
 
 /* Keep link button colors, ensure text contrast if needed */
-/* Text color is already white, which is fine on these backgrounds */
+body.dark-mode .link-button {
+    color: #ffcdd2; /* Pastel pink text in dark mode */
+}
 body.dark-mode .link-button:hover {
     filter: brightness(1.2);
-    color: #fff; /* Ensure text remains white */
+    color: #ffcdd2; /* Keep pastel pink text on hover */
 }
 
 body.dark-mode #footer {
