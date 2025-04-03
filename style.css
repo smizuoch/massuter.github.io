@@ -75,9 +75,40 @@ a {
 
 a:hover, a:focus {
     color: #FFB6C1; /* Accent pink on hover */
-    text-decoration: underline;
+    text-decoration: none; /* Remove underline globally for links on hover */
 }
 
+/* --- Base Button Style --- */
+.button {
+    display: inline-flex; /* Align icon and text */
+    align-items: center;
+    justify-content: center; /* Center content */
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    border: 2px solid transparent; /* Base border */
+    cursor: pointer;
+    text-align: center;
+    color: #fff; /* Default text color for buttons */
+}
+
+.button i {
+    margin-right: 0.7rem;
+    font-size: 1.2em; /* Slightly larger icons */
+}
+
+.button:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.1); /* Slightly brighten on hover */
+    text-decoration: none; /* Ensure no underline on hover */
+    color: #fff; /* Keep text color white on hover by default */
+}
+
+
+/* --- Layout & Sections --- */
 ul {
     list-style: none;
     padding-left: 0; /* Remove default padding */
@@ -407,13 +438,17 @@ nav {
     padding: 0 1rem;
     margin-bottom: 1rem;
     min-height: 3em; /* Ensure space for description */
-}
+} /* Close the world-card p rule */
 
+/* Apply base button styles */
 .world-launch-button {
     background-color: #FFB6C1; /* Accent pink */
+    border-color: #FFB6C1;
 }
 .world-launch-button:hover {
     background-color: #ff9aaa;
+    border-color: #ff9aaa;
+    color: #fff; /* Ensure text remains white */
 }
 
 .worlds-note {
@@ -475,29 +510,13 @@ nav {
     gap: 1.5rem;
 }
 
-.links-list li {
-    text-align: center;
-}
-
+/* Apply base button styles */
 .link-button {
-    display: inline-flex; /* Align icon and text */
-    align-items: center;
-    padding: 0.8rem 1.5rem;
-    border-radius: 25px;
-    font-size: 1rem;
-    font-weight: 500;
-    text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
-    border: 2px solid transparent; /* Base border */
-    color: #fff; /* Default text color */
-}
-
-.link-button i {
-    margin-right: 0.7rem;
-    font-size: 1.2em; /* Slightly larger icons */
+    /* Inherits from .button */
 }
 
 /* Specific link button colors */
+/* Base styles are now in .button */
 .link-button.twitch { background-color: #9146FF; border-color: #9146FF; }
 .link-button.youtube { background-color: #FF0000; border-color: #FF0000; }
 .link-button.vrchat { background-color: #1f9bfd; border-color: #1f9bfd; } /* Example color */
@@ -732,12 +751,13 @@ body.dark-mode h4 {
      color: #82c4e0; /* Lighter blue */
 }
 
+/* General links in dark mode */
 body.dark-mode a {
-    color: #82c4e0; /* Lighter blue for links */
+    color: #9ad7ef; /* Slightly brighter blue for better contrast */
 }
 
 body.dark-mode a:hover, body.dark-mode a:focus {
-    color: #ffcdd2; /* Lighter pink on hover */
+    color: #ffdbe0; /* Slightly brighter pink on hover */
 }
 
 /* Section backgrounds */
@@ -812,14 +832,16 @@ body.dark-mode .news-list li {
 body.dark-mode .world-card h3 {
     color: #82c4e0; /* Lighter blue */
 }
-
+/* Ensure world button text is readable in dark mode */
 body.dark-mode .world-launch-button {
     background-color: #ffcdd2; /* Lighter pink */
-    color: #333;
+    border-color: #ffcdd2;
+    color: #444; /* Darker text for contrast on light pink */
 }
 body.dark-mode .world-launch-button:hover {
     background-color: #ffb3ba;
-    color: #333;
+    border-color: #ffb3ba;
+    color: #333; /* Slightly darker text on hover */
 }
 
 body.dark-mode .news-list li {
@@ -834,9 +856,11 @@ body.dark-mode #links {
     background-color: #2c3e50; /* Match body background */
 }
 
-/* Keep link button colors, maybe adjust hover brightness */
+/* Keep link button colors, ensure text contrast if needed */
+/* Text color is already white, which is fine on these backgrounds */
 body.dark-mode .link-button:hover {
     filter: brightness(1.2);
+    color: #fff; /* Ensure text remains white */
 }
 
 body.dark-mode #footer {
